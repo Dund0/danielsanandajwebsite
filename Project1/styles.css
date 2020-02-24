@@ -53,9 +53,11 @@ body {
     font-weight: bold;
 }
 
-/*tried to move download button to the right of the div but did not work*/
+/*move dl button to right of div*/
 .NavBarItemRight {
     float: right;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 /*give the current page on the navbar color red*/
