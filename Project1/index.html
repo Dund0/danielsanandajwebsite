@@ -30,6 +30,19 @@
         </div>
 
         <div class="mainBody">
+            <!--div for audio player-->
+            <div>
+                <!--autoplay backgroung audio-->
+                <audio id="myaudio" src='assets/HearthomeCity.mp3' controls preload='auto' loop autoplay>
+                </audio>
+
+                <!-- js script taken from stackoverflow https://stackoverflow.com/questions/33747398/html-audio-tag-volume -->
+                <script>
+                    var audio = document.getElementById("myaudio");
+                    audio.volume = 0.05;
+                </script>
+            </div>
+
             <div class="MainLogo">
                 <img src="assets/hoi4transparent.png" alt="Hearts of Iron 4" width="350" height="150">
             </div>
