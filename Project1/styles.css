@@ -1,0 +1,121 @@
+html {
+    font-family: 'Roboto', ;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+
+.topBar {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    background-color: black;
+}
+
+.NavBar {
+    margin: 0;
+    padding: 0;
+}
+
+.NavBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.NavBar li {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8em;
+}
+
+.NavBarItem {
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: inline;
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.NavBarItemCurrent {
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: inline;
+    text-decoration: none;
+    color: red;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.NavBarItem:hover {
+    background-color: white;
+    color: black;
+}
+
+.mainBody {
+
+}
+
+.MainLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.description {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.descriptionTitle {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: whitesmoke;
+    font-size: 2.5em;
+}
+
+.descriptionTitleSmall {
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: whitesmoke;
+    font-size: 2em;
+}
+
+.descriptionText {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.trailerVideo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; 
+}
+
+.screenshotImgs {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#menu {
+
+}
