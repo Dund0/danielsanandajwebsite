@@ -1,13 +1,16 @@
+/*set default font to roboto*/
 html {
     font-family: 'Roboto', ;
 }
 
+/*set background color to gray and margins to the edges of the browser*/
 body {
     margin: 0;
     padding: 0;
     background-color: gray;
 }
 
+/*set the topbar and give it black background*/
 .topBar {
     box-sizing: border-box;
     margin: 0;
@@ -16,11 +19,13 @@ body {
     background-color: black;
 }
 
+/*set nav bar to the edges of the browser*/
 .NavBar {
     margin: 0;
     padding: 0;
 }
 
+/*align navbar list to center*/
 .NavBar ul {
     list-style-type: none;
     margin: 0;
@@ -28,6 +33,7 @@ body {
     text-align: center;
 }
 
+/*navbar list item text color and font size*/
 .NavBar li {
     display: inline;
     text-decoration: none;
@@ -35,6 +41,7 @@ body {
     font-size: 1.8em;
 }
 
+/*navbar item padding color padding and font size*/
 .NavBarItem {
     margin: 0;
     padding-right: 20px;
@@ -46,6 +53,14 @@ body {
     font-weight: bold;
 }
 
+/*move dl button to right of div*/
+.NavBarItemRight {
+    float: right;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/*give the current page on the navbar color red*/
 .NavBarItemCurrent {
     margin: 0;
     padding-right: 20px;
@@ -57,15 +72,18 @@ body {
     font-weight: bold;
 }
 
+/*when hovering over navbar item turn background white*/
 .NavBarItem:hover {
     background-color: white;
     color: black;
 }
 
+/*didnt need this*/
 .mainBody {
 
 }
 
+/*center the logo*/
 .MainLogo{
     display: block;
     margin-left: auto;
@@ -73,11 +91,13 @@ body {
     width: fit-content;
 }
 
+/*restrict the text divs to not take the full browser*/
 .description {
     margin-left: 15%;
     margin-right: 15%;
 }
 
+/*large text for titles and underline*/
 .descriptionTitle {
     font-weight: bold;
     text-align: center;
@@ -86,6 +106,7 @@ body {
     font-size: 2.5em;
 }
 
+/*smaller text for titles adn underline*/
 .descriptionTitleSmall {
     font-weight: bold;
     text-align: center;
@@ -94,6 +115,7 @@ body {
     font-size: 2em;
 }
 
+/*text style for text*/
 .descriptionText {
     font-size: 1.5em;
     color: white;
@@ -101,6 +123,7 @@ body {
     font-family: 'Roboto', Helvetica, sans-serif;
 }
 
+/*center the trailer video*/
 .trailerVideo {
     display: block;
     margin-left: auto;
@@ -108,6 +131,7 @@ body {
     width: fit-content; 
 }
 
+/*padding for screenshots*/
 .screenshotImgs {
     display: block;
     padding-top: 10px;
@@ -116,6 +140,7 @@ body {
     margin-right: auto;
 }
 
+/*wasnt necessary*/
 #menu {
 
 }
