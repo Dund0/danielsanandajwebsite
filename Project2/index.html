@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Giga Pet</title>
+    <meta name="description" content="484 Project 2">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        This is your Giga Pet
+      </h1>
+    </header>
+
+    <main>
+      <audio  id="soundEffect">
+        <source src="assets/buttonclick.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+      <section class="pet-image-container">
+         <!-- Replace pet image with your own pet image -->
+        <img class="pet-image" id="pet-image" src="assets/baseGigaPet.png">
+      </section>
+      <section class="dashboard">
+        <div>Name: <strong><span class="name"></span></strong></div>
+        <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
+        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+        <div class="button-container">
+          <button onclick="play()" class="treat-button">
+            Treat
+          </button>
+          <button onclick="play()" class="play-button">
+            Play
+          </button>
+          <button onclick="play()" class="exercise-button">
+            Exercise
+          </button>
+          <button onclick="play()" class="rest-button">
+            Rest
+          </button>
+        </div>
+      </section>
+      <section class="notification-area-container">
+        <span class="notification">
+
+        </span>
+      </section>
+    </main>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+  </body>
+</html>
