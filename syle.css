@@ -1,21 +1,95 @@
-.Topbar {
-    
+/* Colors
+#3C8EFA
+#0C38E8
+#0800FF
+#480CE8
+#8A0DFF
+*/
+
+/* Global css*/
+html {
+    font-family: 'Sen', sans-serif;
+    font-weight: 700;
+    box-sizing: border-box;
 }
 
-.TopbarIcon {
-
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
-.TopbarLink {
-
+body {
+    margin: 0;
 }
 
-.Navbar {
-    
+h1 {
+    margin: 0;
 }
 
-.ProjectText {
-    font-size: 2em;
+p {
+    margin: 0;
+}
+
+.content-wrap {
+    width: 1000px;
+    min-height: 500px;
+    margin: 0 auto;
+}
+
+.color2Back {
+    background: #0C38E8;
+}
+
+.color3Back {
+    background: #0800FF;
+}
+
+.color4Back {
+    background: #480CE8;
+}
+
+.color5Back {
+    background: #8A0DFF;
+}
+
+/* Navbar css */
+.NavBar {
+    text-align: center;
+    position: sticky;
+    min-height: 35px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.NavBar a {
+    text-decoration: underline;
+    float: right;
+    color: black;
+    font-size: 1.5em;
     font-weight: bold;
-    text-decoration: none;
+    /* margin-top: 32px; */
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.NavBar a:hover {
+    background: rgb(0, 247, 255);
+}
+
+.topImg {
+    float: left;
+    margin: 10px;
+}
+
+/*Intro css*/
+#intro {
+    margin-top: 104px;
+}
+
+.picture {
+    float: left;
+}
+
+.wide-text {
 }
