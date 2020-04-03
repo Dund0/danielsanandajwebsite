@@ -92,7 +92,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         document.getElementById("pet-image").src = "assets/gigaPetAnimation.gif"
       }
       else if (pet_info.button == "rest") {
-        document.getElementById("pet-image").src = "assets/sleepingGigaPet.png"
+        document.getElementById("pet-image").src = "assets/sleepingGIgaPet.png"
       }
       else {
         document.getElementById("pet-image").src = "assets/baseGigaPet.png"
