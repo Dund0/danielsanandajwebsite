@@ -8,6 +8,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
     $('.rest-button').click(clickedRestButton);
+    $('.stop-button').click(clickedStopButton);
   
 
   
@@ -69,6 +70,14 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.button = "rest"
       checkAndUpdatePetInfoInHtml();
     }
+
+    function clickedStopButton() {
+      //set notification
+      pet_info.notification = "Bhlorg";
+      //set button
+      pet_info.button = "stop"
+      checkAndUpdatePetInfoInHtml();
+    }
   
     function checkAndUpdatePetInfoInHtml() {
       checkWeightAndHappinessBeforeUpdating();  
@@ -93,6 +102,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       }
       else if (pet_info.button == "rest") {
         document.getElementById("pet-image").src = "assets/sleepingGIgaPet.png"
+      }
+      else if (pet_info.button == "exercise") {
+        document.getElementById("pet-image").src = "assets/exerciseGigaPet.png"
       }
       else {
         document.getElementById("pet-image").src = "assets/baseGigaPet.png"
