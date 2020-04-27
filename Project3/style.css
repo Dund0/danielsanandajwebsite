@@ -119,6 +119,11 @@ body {
     text-align: center;
 }
 
+.masthead a {
+    text-decoration: underline;
+    color: white;
+}
+
 .intro {
     padding: 2em 2em;
     color: #ffffff;
