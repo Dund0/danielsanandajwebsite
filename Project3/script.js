@@ -5,9 +5,18 @@ const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p").innerHTML;
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
+const numErrors = document.querySelector("#errors");
+const wpmW = document.querySelector("#wpm");
 
 //check if clock is running
 var running = false;
+//number of errors
+var errors = 0;
+//words per minute
+var wpm = 0;
+//check for backspace
+var old = 0;
+
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
 function zeroNum(time) {
@@ -73,8 +82,15 @@ function matchedText(text){
     if(text == originText) {
         watch.stop();
         testArea.setAttribute("disabled", "disabled");
+        numErrors.textContent = 'Errors: ' + errors;
     }
-
+    if(originText.charAt(text.length-1) != text.charAt(text.length-1)) {
+        if(text.length > old) {
+            console.log('error');
+            errors++;
+        }
+    }
+    old = text.length;
 }
 // Start the timer:
 function startTimer() {
@@ -87,6 +103,10 @@ function reset() {
     watch.reset();
     testArea.value = "";
     testArea.removeAttribute("disabled");
+    numErrors.textContent = "";
+    errors = 0;
+    wpmW.textContent = "";
+    wpm = 0;
 }
 
 // Event listeners for keyboard input and the reset button:
