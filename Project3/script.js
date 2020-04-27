@@ -60,6 +60,7 @@ function Timer() {
             running = false;
     };
     this.reset = function(){
+        time = 0;
         theTimer.textContent = "00:00:000";
     };
 }
@@ -92,7 +93,7 @@ function reset() {
 //check for typing
 testArea.addEventListener('keyup', function(){
     //if timer not running turn on the timer
-    if(!running){
+    if(!running && testArea.value.length > 0){
         startTimer();
     }
 
