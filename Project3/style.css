@@ -191,3 +191,7 @@ body {
     color: white;
     background-color: #E95D0F;
 }
+
+#errors {
+    font-size: 2em;
+}
