@@ -16,6 +16,8 @@ var errors = 0;
 var wpm = 0;
 //check for backspace
 var old = 0;
+//check for error
+var error = false;
 
 
 // Add leading zero to numbers 9 or below (purely for aesthetics):
@@ -81,16 +83,22 @@ function matchedText(text){
     console.log('testing');
     if(text == originText) {
         watch.stop();
+        testWrapper.style.border = "10px solid green";
         testArea.setAttribute("disabled", "disabled");
         numErrors.textContent = 'Errors: ' + errors;
     }
-    if(originText.charAt(text.length-1) != text.charAt(text.length-1)) {
+    else if(originText.charAt(text.length-1) != text.charAt(text.length-1)) {
         if(text.length > old) {
+            testWrapper.style.border = "10px solid red";
             console.log('error');
+            error = true;
             errors++;
         }
     }
-    old = text.length;
+    else {
+        testWrapper.style.border = "10px solid blue";
+        old = text.length;
+    }
 }
 // Start the timer:
 function startTimer() {
@@ -103,6 +111,7 @@ function reset() {
     watch.reset();
     testArea.value = "";
     testArea.removeAttribute("disabled");
+    testWrapper.style.border = "10px solid grey"
     numErrors.textContent = "";
     errors = 0;
     wpmW.textContent = "";
