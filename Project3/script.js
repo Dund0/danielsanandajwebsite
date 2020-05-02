@@ -114,6 +114,12 @@ var watch = new Timer();
 // Match the text entered with the provided text on the page:
 function matchedText(text, key){
     //if the text is equal stop the click and disable the text box and make the border green
+    if(key.ctrlKey && key.keyCode == 86) {
+        alert('NO CHEATING, THIS MEANS YOU ERIC');
+        reset(0);
+        return;
+    }
+
     if(text == originText) {
         var time = getMin();
         watch.stop();
@@ -189,7 +195,7 @@ testArea.addEventListener('keyup', function(a){
 
 //reset button
 resetButton.addEventListener('click', function(){
-    reset();
+    reset(0);
 });
 
 newButton.addEventListener('click', function(){
