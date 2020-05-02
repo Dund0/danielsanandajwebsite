@@ -32,16 +32,21 @@ var old = 0;
 //check for error
 var error = false;
 //number for picking text
-var num = -1;
+var num = -1, oldNum = -1;
 //formatted time
 var minutes = '', seconds = '', mili = '';
+//check if random text is the same
+var oldText = '', originText = '';
 
 //pick random string
 function randomString() {
-    num = Math.floor(Math.random() * strings.length);
+    while(num != oldNum)
+        num = Math.floor(Math.random() * strings.length);
 
+    oldNum = num;
     setOriginText.innerHTML = strings[num];
     originText = document.querySelector("#origin-text p").innerHTML;
+
 }
 randomString();
 
@@ -176,8 +181,10 @@ function reset(a) {
     errors = 0;
     wpmW.textContent = "";
     wpm = 0;
-    if(a == 1)
-        randomString();
+    oldText = originText;
+    if(a == 1) {
+        randomString();  
+    }
 }
 
 // Event listeners for keyboard input and the reset button:
@@ -190,7 +197,6 @@ testArea.addEventListener('keyup', function(a){
 
     //check if the text is equal
     matchedText(testArea.value, a);
-    //console.log('typing');
 });
 
 //reset button

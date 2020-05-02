@@ -156,6 +156,7 @@ body {
 #origin-text p {
     margin: 0;
     padding-bottom: 1em;
+    user-select: none;
 }
 
 .test-wrapper {
