@@ -194,4 +194,10 @@ body {
 
 #errors {
     font-size: 2em;
+    margin-bottom: 0;
+}
+
+#wpm {
+    margin-top: 0;
+    font-size: 2em;
 }
