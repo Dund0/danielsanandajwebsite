@@ -40,8 +40,9 @@ var oldText = '', originText = '';
 
 //pick random string
 function randomString() {
-    while(num != oldNum)
+    while(num == oldNum) {
         num = Math.floor(Math.random() * strings.length);
+    }
 
     oldNum = num;
     setOriginText.innerHTML = strings[num];
