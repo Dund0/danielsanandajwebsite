@@ -1,0 +1,97 @@
+ /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+ .wrapper {
+     height: 600px;
+     width: 100%;
+ }
+
+ #map {
+     height: 700px;
+     width: 700px;
+     float: left;
+     position: fixed;
+     margin-left: 20px;
+     margin-top: 20px;
+ }
+
+ .rightSide {
+     margin-top: 50px;
+     margin-left: 50px;
+     float: left;
+     width: auto;
+ }
+
+ .title {
+     font-weight: bold;
+     font-size: 3em;
+ }
+
+ .textBox {
+     width: 500px;
+     height: 50px;
+     background-color: #ededed;
+     margin-bottom: 5px;
+ }
+
+ #FindLocation {
+     padding-top: 5px;
+     padding-left: 10px;
+     margin: 0;
+     font-size: 2em;
+ }
+
+ .confirm {
+     font-size: 2em;
+     font-weight: bold;
+     margin-top: 5px;
+     border: 10px solid black;
+ }
+
+ .instructBox {
+     width: fit-content;
+     background-color: #ededed;
+     border: 5px solid black;
+     margin-bottom: 10px;
+ }
+
+ .instructBox h2 {
+     margin: 0;
+ }
+
+ .redText {}
+
+ .greenText {}
+
+ #FirstLocation {
+    display: none;
+ }
+
+ #SecondLocation {
+    display: none;
+ }
+
+ #ThirdLocation {
+    display: none;
+ }
+
+ #FourthLocation {
+    display: none;
+ }
+
+ #FifthLocation {
+    display: none;
+ }
+
+ #Score {
+    display: none;
+ }
+
+ /* Optional: Makes the sample page fill the window. */
+
+ html, body {
+     background-color: #245195;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+ }
