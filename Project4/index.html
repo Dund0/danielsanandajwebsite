@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="map"></div>
+        <div class="rightSide">
+            <h1 class="title">Google Maps CSUN Game</h1>
+            <div class="instructBox">
+                <h2 class="instructions"> Find the locations shown below</h2>
+            </div>
+            <div class="textBox" id="FirstLocation">
+                <p id="FindLocation"></p>
+            </div>
+            <div class="textBox" id="SecondLocation">
+                <p id="FindLocation"></p>
+            </div>
+            <div class="textBox" id="ThirdLocation">
+                <p id="FindLocation"></p>
+            </div>
+            <div class="textBox" id="FourthLocation">
+                <p id="FindLocation"></p>
+            </div>
+            <div class="textBox" id="FifthLocation">
+                <p id="FindLocation"></p>
+            </div>
+            <div class="textBox" id="Score">
+                <p id="FindLocation"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" type="text/javascript" async></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-MuN5Em0Q0nXWmaVUxUvxSRNqtvkxOwA&callback=initMap"
+        async defer></script>
+
+    <body onLoad="startGame()">
+</body>
+
+</html>
