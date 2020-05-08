@@ -1,5 +1,6 @@
-//constant to hold score box
+//constant to hold score box and timer
 const Score = document.querySelector("#Score");
+const theTimer = document.querySelector(".timer");
 
 //array to hold location divs
 var textBoxes = [
@@ -152,13 +153,81 @@ function deleteMarker() {
 function createMarker(location) {
     var markerSet = new google.maps.Marker({
         position: location,
+        animation: google.maps.Animation.DROP,
         map: map
     });
     marker.push(markerSet);
     marker[0].setMap(map);
 }
 
+//Timer object from project 3
+function zeroNum(time) {
+    return '0' + time;
+}
+
+function Timer() {
+
+    //variables
+    var time = 0;
+    var interval;
+    var offset;
+
+    //update the current time every 10ms
+    function update() {
+        time += change();
+        formatTime = format(time);
+        theTimer.textContent = formatTime;
+    };
+    //find how much time passed
+    function change() {
+        var current = Date.now();
+        var timePass = current - offset;
+        offset = current;
+        return timePass;
+    };
+
+    //format the time
+    function format(unformattedTime) {
+        var time = new Date(unformattedTime);
+        minutes = time.getMinutes().toString();
+        seconds = time.getSeconds().toString();
+        mili = time.getMilliseconds().toString();
+
+        //add zeroes if necessary
+        if (minutes.length < 2)
+            minutes = zeroNum(minutes);
+        if (seconds.length < 2)
+            seconds = zeroNum(seconds);
+        if (mili.length < 3)
+            mili = zeroNum(mili);
+
+        return minutes + ':' + seconds + ':' + mili;
+    };
+
+    //start the clock
+    this.start = function () {
+        interval = setInterval(update, 10);
+        offset = Date.now();
+        running = true;
+    };
+    //stop the clock
+    this.stop = function () {
+        clearInterval(interval);
+        interval = null;
+        running = false;
+    };
+    //reset the clock
+    this.reset = function () {
+        time = 0;
+        theTimer.textContent = "00:00:000";
+    };
+}
+var watch = new Timer();
+
+
 function startGame() {
+    displayOptions();
+
     //pick locations
     var num = Math.floor(Math.random() * locations.length);
     locations[num][3] = 1;
@@ -185,6 +254,10 @@ function startGame() {
 
     if (counter < 4) {
         map.addListener('dblclick', function (e) {
+            if (counter == 0) {
+                watch.start();
+            }
+
             if (!done) {
                 var currentBounds = usedBounds.pop();
 
@@ -234,13 +307,18 @@ function startGame() {
                 //else game is over
                 else {
                     done = true;
+                    watch.stop();
                     deleteMarker();
 
-                    var string = correct + ": Correct, " + (5-correct) + ": Incorrect";
+                    var string = correct + ": Correct, " + (5 - correct) + ": Incorrect";
                     Score.querySelector("p").innerHTML = string;
                     Score.style.display = "block";
                 }
             }
         });
     }
+}
+
+function displayOptions() {
+    var copy = locations.slice();
 }
