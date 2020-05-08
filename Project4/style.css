@@ -1,6 +1,16 @@
  /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 
+#clock {
+    background-color: white;
+    width: fit-content;
+}
+
+ .timer {
+     font-size: 3em;
+     font-weight: bold;
+ }
+
  .wrapper {
      height: 600px;
      width: 100%;
@@ -64,30 +74,28 @@
  .greenText {}
 
  #FirstLocation {
-    display: none;
+     display: none;
  }
 
  #SecondLocation {
-    display: none;
+     display: none;
  }
 
  #ThirdLocation {
-    display: none;
+     display: none;
  }
 
  #FourthLocation {
-    display: none;
+     display: none;
  }
 
  #FifthLocation {
-    display: none;
+     display: none;
  }
 
  #Score {
-    display: none;
+     display: none;
  }
-
- /* Optional: Makes the sample page fill the window. */
 
  html, body {
      background-color: #245195;
