@@ -123,7 +123,7 @@ function initMap() {
         { lat: 34.235628, lng: -118.523172 },
         { lat: 34.235536, lng: -118.531727 }
     ];
-    //parameters for outline
+    //parameters for outline of campus
     var flightPath = new google.maps.Polyline({
         path: flightPlanCoordinates,
         geodesic: true,
@@ -145,11 +145,13 @@ function initMap() {
     });
 }
 
+//deletes the current marker on the map and remoces it from marker array
 function deleteMarker() {
     marker[0].setMap(null);
     marker = [];
 }
 
+//creates a new marker and places it on the map
 function createMarker(location) {
     var markerSet = new google.maps.Marker({
         position: location,
@@ -222,23 +224,26 @@ function Timer() {
         theTimer.textContent = "00:00:000";
     };
 }
+//create timer object
 var watch = new Timer();
 
 
+//this starts the game and is run from the html code once everything has loaded
 function startGame() {
-    displayOptions();
 
-    //pick locations
+    //pick first location randomly mark it as used
     var num = Math.floor(Math.random() * locations.length);
     locations[num][3] = 1;
     usedAreas.push(locations[num]);
 
+    //pick the rest of the locations randomly
     counter = 0;
     while (counter < 5) {
         num = Math.floor(Math.random() * locations.length);
         while (locations[num][3] == 1) {
             num = Math.floor(Math.random() * locations.length);
         }
+        //set it as used and push the area and its bounds for map use
         locations[num][3] = 1;
         usedAreas.push(locations[num]);
         usedBounds.push(buildingBounds[num]);
@@ -252,20 +257,27 @@ function startGame() {
     textBoxes[counter].querySelector("p").innerHTML = usedAreas.pop()[0];
     textBoxes[counter].style.display = "block";
 
+    //go through the other 4 locations
     if (counter < 4) {
+        //listen for answer for current question
         map.addListener('dblclick', function (e) {
+            //if its the first answer start the timer
             if (counter == 0) {
                 watch.start();
             }
 
+            //if not done with the final question
             if (!done) {
+                //get the current bounds for the location
                 var currentBounds = usedBounds.pop();
 
+                //create the rectangle around the location to check where is clicked
                 var x = new google.maps.Rectangle({
                     bounds: currentBounds
                 });
 
-                //if the point selected is correct show green rectangle
+                //check the bounds of where is clicked is the right location
+                //if the point selected is correct draw green rectangle
                 if (x.getBounds().contains(e.latLng)) {
                     var rectangle = new google.maps.Rectangle({
                         strokeColor: '#00961D',
@@ -277,12 +289,13 @@ function startGame() {
                         bounds: currentBounds
                     });
 
+                    //change the color of the text to green and the box around it too increment correct counter
                     textBoxes[counter].querySelector("p").style.color = "green";
                     textBoxes[counter].style.border = "thick solid green";
                     correct++;
 
                 }
-                //if not then show red
+                //if correct not then draw red rectangle
                 else {
                     var rectangle = new google.maps.Rectangle({
                         strokeColor: '#FF0000',
@@ -294,6 +307,7 @@ function startGame() {
                         bounds: currentBounds
                     });
 
+                    //change the color of the text to red and the box around it too
                     textBoxes[counter].querySelector("p").style.color = "red";
                     textBoxes[counter].style.border = "thick solid red";
                 }
@@ -310,6 +324,7 @@ function startGame() {
                     watch.stop();
                     deleteMarker();
 
+                    //display the total correct
                     var string = correct + ": Correct, " + (5 - correct) + ": Incorrect";
                     Score.querySelector("p").innerHTML = string;
                     Score.style.display = "block";
@@ -317,8 +332,4 @@ function startGame() {
             }
         });
     }
-}
-
-function displayOptions() {
-    var copy = locations.slice();
 }
