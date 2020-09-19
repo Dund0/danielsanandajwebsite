@@ -3,9 +3,13 @@ const button = document.querySelector("#button");
 function playVideo() {
     var s = document.getElementById("input").value;
 
+
+    if(s.indexOf('.be/') != -1) {
+        var equalPosition = s.indexOf('.be/');
+        s = s.substring(equalPosition+4);
+    } else {
     var equalPosition = s.indexOf('=');
-    if(equalPosition != -1) {
-        s = s.substring(equalPosition+1);
+    s = s.substring(equalPosition+1);
     }
 
     document.getElementById('embed').innerHTML = 
