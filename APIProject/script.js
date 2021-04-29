@@ -1,4 +1,4 @@
-const BASE_URL = 'http://numbersapi.com/';
+const BASE_URL = 'https://numbersapi.com/';
 const RANDOM = 'random/';
 const TRIVIA = 'trivia/';
 const YEAR = 'year/';
